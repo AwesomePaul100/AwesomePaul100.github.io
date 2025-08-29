@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Paul Amoruso — Interactive CV</title>
+  <style>
+    :root{--accent:#0b63ff;--muted:#6b7280;--bg:#0f1724;--card:#0b1220;--glass: rgba(255,255,255,0.03)}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial;background:linear-gradient(180deg,#071028 0%, #071a2b 60%);color:#e6eef8}
+    .container{max-width:1100px;margin:32px auto;padding:28px}
+    header{display:flex;gap:20px;align-items:center}
+    .avatar{width:96px;height:96px;border-radius:14px;background:linear-gradient(135deg,var(--accent),#6be0ff);display:flex;align-items:center;justify-content:center;font-weight:700;color:#02203a}
+    h1{margin:0;font-size:28px}
+    .subtitle{color:var(--muted);margin-top:4px}
+    nav{margin-left:auto}
+    nav a{color:var(--muted);text-decoration:none;margin-left:14px;font-weight:600}
+    .grid{display:grid;grid-template-columns:320px 1fr;gap:20px;margin-top:24px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+    .left .section{margin-bottom:14px}
+    .section h3{margin:0 0 8px 0;font-size:14px;color:var(--muted)}
+    .contact p{margin:6px 0}
+    .pill{display:inline-block;background:var(--glass);padding:6px 10px;border-radius:999px;margin:4px 6px 0 0;color:var(--muted);font-size:13px}
+    .skills{display:flex;flex-wrap:wrap}
+    .timeline{display:flex;flex-direction:column;gap:10px}
+    .item{padding:12px;border-radius:10px;background:rgba(255,255,255,0.01);border:1px solid rgba(255,255,255,0.02)}
+    .item .date{font-size:12px;color:var(--muted)}
+    .pubs .pub{border-left:3px solid rgba(255,255,255,0.02);padding-left:10px;margin-bottom:8px}
+    .controls{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+    .btn{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:8px;color:#dbeafe;cursor:pointer}
+    .btn.primary{background:var(--accent);border-color:transparent;color:#02203a}
+    footer{margin-top:22px;color:var(--muted);font-size:13px}
+    @media(max-width:900px){.grid{grid-template-columns:1fr}.avatar{width:72px;height:72px}}
+    .fade-up{transform:translateY(8px);opacity:0;animation:fadeUp .6s forwards}
+    @keyframes fadeUp{to{transform:none;opacity:1}}
+    .accordion summary{list-style:none;cursor:pointer;font-weight:700}
+    .accordion details{background:rgba(255,255,255,0.01);padding:10px;border-radius:8px}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="fade-up">
+      <div class="avatar">PA</div>
+      <div>
+        <h1>Paul Amoruso, M.S. · UCF Ph.D. Candidate</h1>
+        <div class="subtitle">Computer Engineering · Assistive AI for Education · FPGA Acceleration</div>
+        <div style="margin-top:8px;color:var(--muted);font-size:13px">UCF ECE Future Faculty Laureate (FFL) 2024–2026</div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#publications">Publications</a>
+        <a href="#honors">Honors</a>
+        <a href="#seminars">Seminars</a>
+        <a href="#certificates">Certificates</a>
+        <a href="#service">Service</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <div class="grid">
+      <aside class="left">
+        <div class="card contact">
+          <h3>Contact</h3>
+          <p>✉ <a href="mailto:paul.amoruso@ucf.edu" style="color:inherit;text-decoration:none">paul.amoruso@ucf.edu</a></p>
+          <p>🔗 <a href="https://cal.ucf.edu/person/paul-amoruso/" target="_blank" style="color:inherit">cal.ucf.edu/person/paul-amoruso</a></p>
+          <div style="margin-top:12px"><a class="btn" href="sandbox:/mnt/data/Paul_Amoruso_CV-2025-07-16-1912hrs.pdf" download>Download PDF CV</a></div>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h3>Skills</h3>
+          <div class="skills">
+            <span class="pill">C/C++</span><span class="pill">Python</span><span class="pill">Verilog</span>
+            <span class="pill">FPGA (Vitis HLS)</span><span class="pill">PyTorch</span><span class="pill">Machine Learning</span>
+            <span class="pill">REST API</span><span class="pill">HTML</span><span class="pill">Java</span><span class="pill">MATLAB</span>
+            <span class="pill">Assembly</span><span class="pill">Linux</span><span class="pill">SQL</span>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h3>Languages</h3>
+          <p class="pill">English (Native)</p>
+          <p class="pill">Italian (Fluent)</p>
+          <p class="pill">Spanish (Familiarized)</p>
+        </div>
+      </aside>
+
+      <main>
+        <section id="about" class="card fade-up">
+          <h2>About / Objective</h2>
+          <p>I am pursuing an Assistant Professor position at a Research-1 (R1) institution. My program spans FPGA acceleration for AI, assistive AI for adaptive micro-credentialing, and evolving instructional practices in STEM higher education.</p>
+          <h3>Education</h3>
+          <div class="timeline">
+            <div class="item"><div class="date">Fall 2023 — Present</div><strong>Ph.D., Computer Engineering</strong> — UCF, GPA: 4.0</div>
+            <div class="item"><div class="date">Spring 2022 — Spring 2023</div><strong>M.S., Computer Engineering</strong> — UCF</div>
+            <div class="item"><div class="date">2017 — 2021</div><strong>B.S., Computer Engineering</strong> — UCF</div>
+          </div>
+        </section>
+
+        <section id="experience" class="card fade-up" style="margin-top:12px">
+          <h2>Professional Experience</h2>
+          <h3>Research</h3>
+          <div class="item"><strong>Graduate Research Assistant — Computer Architecture Lab</strong> (2022–Present)
+            <ul>
+              <li>Lead GRA on 5-year NSF grant: Assistive AI for micro-credentialing and Generative AI remediation .</li>
+              <li>Publications in ECE AI domain and STEM Education .</li>
+              <li>Agent-based model for staffing optimization (CSSSA Best Poster Award) .</li>
+              <li>Developed Cellular Automata FPGA classification model (IEEE IS 2024) .</li>
+            </ul>
+          </div>
+
+          <h3>Teaching</h3>
+          <div class="item"><strong>EEL3801 — Computer Organization</strong> (Summer 2022–Summer 2025)
+            <ul>
+              <li>Graduate Teaching Grader & Guest Lecturer .</li>
+              <li>Best Graduate TA Award (2023).</li>
+              <li>Led course migration from Classic to New Canvas quizzes .</li>
+              <li>Directed and mentored UTAs.</li>
+            </ul>
+          </div>
+          <div class="item"><strong>EGS1006 — Introduction to Engineering</strong> (2019) — Undergraduate TA .</div>
+          <div class="item"><strong>High-School Biology Assistant</strong> (2017) .</div>
+
+          <h3>Industry</h3>
+          <div class="item"><strong>Junior Consultant — EMA Computers, Inc.</strong> (2015–Present) 
+            <ul><li>IT consulting, deployment, malware mitigation, SEO, and websites .</li></ul>
+          </div>
+        </section>
+
+        <section id="publications" class="card fade-up pubs" style="margin-top:12px">
+          <h2>Publications</h2>
+          <h3>Journal</h3>
+          <div class="pub">AchieveUp: Personalizing Digitized Assessments and Remediation (ASEE COED Journal, 2025) </div>
+
+          <h3>Conference — Technical</h3>
+          <div class="pub">Compression-Based Feature Clustering using HLS for Low-Footprint FPGA Text Classification — In preparation </div>
+          <div class="pub">Machine Learning Optimization for Neuromorphic Acceleration — GLSVLSI 2025 </div>
+          <div class="pub">Metaheuristics for Multi-Objective Optimization in Reconfigurable Fabrics — GLSVLSI 2025 </div>
+          <div class="pub">IUSE:HSI: NetLogo-based Estimation of Tutoring Demand — ASEE 2025 </div>
+          <div class="pub">FOCAL: Feature-Oriented Cellular Automata Learning — IEEE-IS 2024 </div>
+
+          <h3>Conference — STEM Education</h3>
+          <div class="pub">Progressing from Micro-Credentialing to Micro-Recruiting — IEEE FIE 2025 </div>
+          <div class="pub">Compression-Assisted Zero-Shot Prompting of LLMs — GLSVLSI 2025 </div>
+          <div class="pub">GenAIprime: Generative AI for Remediation-Priming — ISEC 2025 </div>
+          <div class="pub">Automated Micro-Credentialing & AI-Enhanced Remediation — FOIS 2025 </div>
+          <div class="pub">Agent-Based Model for Optimal Remedial Staffing — CSSSA 2024 </div>
+          <div class="pub">Instructor-Facing GUI for Micro-Credentialing — ASEE-SE 2024 </div>
+          <div class="pub">Personalizing Assessments with Automated Micro-Credentialing — OLC 2022 </div>
+        </section>
+
+        <section id="honors" class="card fade-up" style="margin-top:12px">
+          <h2>Honors & Awards</h2>
+          <ul>
+            <li>Donaldson Memorial Scholarship, 2025 ($2,000) </li>
+            <li>Future Faculty Laureate, UCF ECE 2024–2026 ($12,000 support) </li>
+            <li>Best Graduate Teaching Assistant Award, UCF ECE, 2023 </li>
+            <li>UCF 3MT Competition Finalist, 2022 </li>
+            <li>CECS Senior Design Showcase, 1st Place, 2021 </li>
+            <li>Dean’s List: 2018–2021 </li>
+            <li>President’s Honor Roll: 2020 </li>
+            <li>ACM Complimentary Membership (Reviewer Service), 2024 </li>
+          </ul>
+        </section>
+
+        <section id="seminars" class="card fade-up" style="margin-top:12px">
+          <h2>Seminars & Presentations</h2>
+          <ul>
+            <li>Great Lakes Symposium on VLSI — Presentation, New Orleans, July 1, 2025</li>
+            <li>ASEE 2025 — Poster presentation, Montreal, June 24, 2025</li>
+            <li>ISEC 2025 — Oral presentation, Princeton, March 15, 2025</li>
+            <li>CSSSA 2024 — Best Poster Award, Oct 24–27, 2024</li>
+            <li>IEEE IS 2024 — Paper presentation, June 2024</li>
+          </ul>
+        </section>
+
+        <section id="certificates" class="card fade-up" style="margin-top:12px">
+          <h2>Certificates</h2>
+          <ul>
+            <li>UCF Future Faculty Development Program Certificate, 2024 </li>
+            <li>UCF Excellence in Teaching Workshop Series Certificate, 2023 </li>
+            <li>LinkedIn Learning: Advanced FPGA Development with Vitis HLS, 2022 </li>
+            <li>LinkedIn Learning: Machine Learning Foundations, 2021 </li>
+          </ul>
+        </section>
+
+        <section id="service" class="card fade-up" style="margin-top:12px">
+          <h2>Professional Service</h2>
+          <ul>
+            <li>Reviewer: ACM Winter Simulation Conference, ASEE National Conference, GLSVLSI Workshops </li>
+            <li>Member: ACM, IEEE, ASEE, CSSSA </li>
+            <li>Outreach: Mentored multiple senior design teams at UCF; guided GTAs/UTAs </li>
+          </ul>
+        </section>
+
+        <section id="contact" class="card fade-up" style="margin-top:12px">
+          <h2>Contact & Actions</h2>
+          <p>Email: <a href="mailto:paul.amoruso@ucf.edu">paul.amoruso@ucf.edu</a></p>
+          <button class="btn" onclick="copyEmail()">Copy Email</button>
+          <a class="btn" href="sandbox:/mnt/data/Paul_Amoruso_CV-2025-07-16-1912hrs.pdf" download style="margin-left:8px">Download PDF</a>
+        </section>
+
+        <footer>Made with ♥ · Interactive CV · All content © Paul Amoruso</footer>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    function copyEmail(){navigator.clipboard.writeText('paul.amoruso@ucf.edu').then(()=>alert('Email copied'))}
+    document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'});}));
+  </script>
+</body>
+</html>
